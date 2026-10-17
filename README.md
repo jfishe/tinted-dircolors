@@ -35,8 +35,10 @@ Commit and push `src/`, `templates/`, and `dircolors/`. The
 rebuilds `dircolors/` on every push touching `src/` and weekly against the latest
 upstream schemes. Users pick up changes with `tinty update`.
 
-The tinty hook copies the applied scheme to `~/.dircolors`, which
-`_tinty_dircolors` in `~/.zshrc` loads.
+The tinty hook copies the applied scheme to `~/.dircolors`,
+which `_tinty_dircolors` in `~/.zshrc` loads.
+When `$USERPROFILE` is set (WSL),
+it also copies it to `$USERPROFILE/.dircolors` for Windows-side tools.
 
 ## Tinted Configuration
 
@@ -47,13 +49,28 @@ Append to `~/.config/tinted-theming/tinty/config.toml`:
 name = "tinted-dircolors"
 path = "https://github.com/jfishe/tinted-dircolors"
 themes-dir = "dircolors"
-hook = "cp -f %f \"$HOME/.dircolors\""
+hook = "cp -f %f \"$HOME/.dircolors\" && { [ -z \"$USERPROFILE\" ] || cp -f %f \"$USERPROFILE/.dircolors\"; }"
 supported-systems = ["base16", "base24", "tinted8"]
 ```
+
+On WSL, the hook reads `$USERPROFILE` from the shell that runs `tinty`.
+To make it available, either:
+
+- (Recommended) add `USERPROFILE/p` to `WSLENV` on the Windows side, so WSL
+  passes it through as a Linux path. In PowerShell:
+
+  ```powershell
+  setx WSLENV "USERPROFILE/p:$env:WSLENV"
+  ```
+
+- or set it in `~/.zshrc` before `_tinty_dircolors` (see below).
 
 Include in `~/.zshrc` prior to invoking Oh-My-Zsh:
 
 ```zsh
+# WSL only, if USERPROFILE is not passed through WSLENV:
+# export USERPROFILE=${USERPROFILE:-$(wslpath "$(cmd.exe /c 'echo %USERPROFILE%' 2>/dev/null | tr -d '\r')")}
+
 # tinted-dircolors: LS_COLORS from ~/.dircolors (copied there by the tinty hook)
 _tinty_dircolors() {
   local f=~/.dircolors
