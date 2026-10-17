@@ -1,11 +1,11 @@
 # tinted-dircolors
 
-Local tinty template that builds a truecolor `dircolors` file per scheme
+Remote tinty template that provides a truecolor `dircolors` file per scheme
 (base16, base24, tinted8), in the spirit of seebi/dircolors-solarized.
 
 - `src/dircolors.in`: the one file to edit. `@ROLE@` placeholders expand to `R;G;B`.
 - `gen-templates.sh`: expands roles into `templates/{base16,tinted8}.mustache`.
-- `dircolors/`: built output, one file per scheme.
+- `dircolors/`: built output, one file per scheme (committed; tinty reads it directly).
 
 | Role    | base16/24 | tinted8                     | Used for                          |
 |---------|-----------|-----------------------------|-----------------------------------|
@@ -21,17 +21,22 @@ Local tinty template that builds a truecolor `dircolors` file per scheme
 | MAGENTA | base0E    | palette.magenta.normal      | images, video, sockets            |
 | BROWN   | base0F    | palette.brown.bright        | keys and crypto                   |
 
-## Rebuild (after editing src/ or `tinty update`)
+## Development
+
+Edit `src/dircolors.in`, then preview locally:
 
 ```bash
 ./gen-templates.sh
 tinty build .
-tinty apply "$(tinty current)"
 ```
 
-The shell picks up the artifact
-`~/.local/share/tinted-theming/tinty/artifacts/tinted-dircolors-dircolors-file.dircolors`
-through `_tinty_dircolors` in `~/.zshrc`.
+Commit and push `src/`, `templates/`, and `dircolors/`. The
+[update workflow](.github/workflows/update.yml) also regenerates the templates and
+rebuilds `dircolors/` on every push touching `src/` and weekly against the latest
+upstream schemes. Users pick up changes with `tinty update`.
+
+The tinty hook copies the applied scheme to `~/.dircolors`, which
+`_tinty_dircolors` in `~/.zshrc` loads.
 
 ## Tinted Configuration
 
@@ -40,8 +45,9 @@ Append to `~/.config/tinted-theming/tinty/config.toml`:
 ```toml
 [[items]]
 name = "tinted-dircolors"
-path = "~/.config/tinted-theming/tinty/tinted-dircolors"
+path = "https://github.com/jfishe/tinted-dircolors"
 themes-dir = "dircolors"
+hook = "cp -f %f \"$HOME/.dircolors\""
 supported-systems = ["base16", "base24", "tinted8"]
 ```
 
