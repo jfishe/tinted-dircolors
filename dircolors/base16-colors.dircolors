@@ -3,6 +3,14 @@
 # Scheme author: mrmrs (http://clrs.cc)
 # Template author: tinted-dircolors (local), modelled on seebi/dircolors-solarized
 #
+# Portions Copyright (c) 2020 Sebastian Tramp, MIT License
+# https://github.com/seebi/dircolors-solarized/blob/master/LICENSE
+#
+# Based on the GNU coreutils dircolors database (dircolors -p):
+# Copyright (C) 1996-2025 Free Software Foundation, Inc.
+# Copying and distribution of this file, with or without modification,
+# are permitted provided the copyright notice and this notice are preserved.
+#
 # Colors are 24-bit truecolor (38;2;R;G;B / 48;2;R;G;B) taken from the scheme,
 # so they do not depend on the terminal's 16/256-color palette.
 #

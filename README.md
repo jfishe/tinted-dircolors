@@ -88,3 +88,16 @@ tinty() {
 
 source $ZSH/oh-my-zsh.sh
 ```
+
+## License and Credits
+
+tinted-dircolors is released under the [MIT License](LICENSE.txt).
+
+- File-type layout modelled on
+  [seebi/dircolors-solarized](https://github.com/seebi/dircolors-solarized),
+  Copyright (c) 2020 Sebastian Tramp, MIT License.
+- Based on the GNU coreutils `dircolors` database (`dircolors -p`),
+  Copyright (C) 1996-2025 Free Software Foundation, Inc.
+- Color schemes from
+  [tinted-theming/schemes](https://github.com/tinted-theming/schemes) (MIT);
+  each generated file credits its scheme author.
