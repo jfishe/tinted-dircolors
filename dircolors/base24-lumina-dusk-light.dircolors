@@ -1,0 +1,299 @@
+# tinted-dircolors
+# Scheme name: Lumina Dusk Light
+# Scheme author: Razik Ikhlef (https://github.com/RazikSF)
+# Template author: tinted-dircolors (local), modelled on seebi/dircolors-solarized
+#
+# Portions Copyright (c) 2020 Sebastian Tramp, MIT License
+# https://github.com/seebi/dircolors-solarized/blob/master/LICENSE
+#
+# Based on the GNU coreutils dircolors database (dircolors -p):
+# Copyright (C) 1996-2025 Free Software Foundation, Inc.
+# Copying and distribution of this file, with or without modification,
+# are permitted provided the copyright notice and this notice are preserved.
+#
+# Colors are 24-bit truecolor (38;2;R;G;B / 48;2;R;G;B) taken from the scheme,
+# so they do not depend on the terminal's 16/256-color palette.
+#
+# Usage: eval "$(dircolors -b this-file)"
+
+# Terminals that get colors at all
+COLORTERM ?*
+TERM Eterm
+TERM ansi
+TERM *color*
+TERM con[0-9]*x[0-9]*
+TERM cons25
+TERM console
+TERM cygwin
+TERM *direct*
+TERM dtterm
+TERM gnome
+TERM hurd
+TERM jfbterm
+TERM konsole
+TERM kterm
+TERM linux
+TERM linux-c
+TERM mlterm
+TERM putty
+TERM rxvt*
+TERM screen*
+TERM st
+TERM terminator
+TERM tmux*
+TERM vt100
+TERM vt220
+TERM xterm*
+
+## Basic file attributes
+RESET 0
+NORMAL 00
+FILE 00
+DIR 01;38;2;51;79;157
+LINK 38;2;0;101;118
+MULTIHARDLINK 00
+FIFO 38;2;100;76;49;48;2;236;226;238
+SOCK 01;38;2;90;77;145
+DOOR 01;38;2;90;77;145
+BLK 01;38;2;100;76;49;48;2;236;226;238
+CHR 01;38;2;100;76;49;48;2;236;226;238
+ORPHAN 01;38;2;136;35;34;48;2;236;226;238
+MISSING 01;38;2;136;35;34;48;2;236;226;238
+SETUID 38;2;241;234;242;48;2;136;35;34
+SETGID 38;2;241;234;242;48;2;100;76;49
+CAPABILITY 38;2;136;35;34;48;2;236;226;238
+STICKY_OTHER_WRITABLE 38;2;241;234;242;48;2;39;105;58
+OTHER_WRITABLE 01;38;2;51;79;157;48;2;236;226;238
+STICKY 38;2;241;234;242;48;2;51;79;157
+EXEC 01;38;2;39;105;58
+
+## Archives and compressed
+.tar 38;2;136;35;34
+.tgz 38;2;136;35;34
+.taz 38;2;136;35;34
+.tbz 38;2;136;35;34
+.tbz2 38;2;136;35;34
+.txz 38;2;136;35;34
+.tzst 38;2;136;35;34
+.tz 38;2;136;35;34
+.zip 38;2;136;35;34
+.7z 38;2;136;35;34
+.rar 38;2;136;35;34
+.gz 38;2;136;35;34
+.bz 38;2;136;35;34
+.bz2 38;2;136;35;34
+.xz 38;2;136;35;34
+.lz 38;2;136;35;34
+.lz4 38;2;136;35;34
+.lzh 38;2;136;35;34
+.lzma 38;2;136;35;34
+.lzo 38;2;136;35;34
+.zst 38;2;136;35;34
+.Z 38;2;136;35;34
+.z 38;2;136;35;34
+.cpio 38;2;136;35;34
+.arj 38;2;136;35;34
+.ace 38;2;136;35;34
+.zoo 38;2;136;35;34
+.cab 38;2;136;35;34
+.alz 38;2;136;35;34
+.dz 38;2;136;35;34
+.br 38;2;136;35;34
+.iso 38;2;136;35;34
+.img 38;2;136;35;34
+.dmg 38;2;136;35;34
+.squashfs 38;2;136;35;34
+
+## Packages
+.deb 01;38;2;136;35;34
+.rpm 01;38;2;136;35;34
+.jar 01;38;2;136;35;34
+.war 01;38;2;136;35;34
+.ear 01;38;2;136;35;34
+.whl 01;38;2;136;35;34
+.gem 01;38;2;136;35;34
+.apk 01;38;2;136;35;34
+.msi 01;38;2;136;35;34
+.pkg 01;38;2;136;35;34
+.snap 01;38;2;136;35;34
+.flatpak 01;38;2;136;35;34
+.AppImage 01;38;2;136;35;34
+.crate 01;38;2;136;35;34
+
+## Images
+.jpg 38;2;90;77;145
+.JPG 38;2;90;77;145
+.jpeg 38;2;90;77;145
+.png 38;2;90;77;145
+.PNG 38;2;90;77;145
+.gif 38;2;90;77;145
+.bmp 38;2;90;77;145
+.webp 38;2;90;77;145
+.avif 38;2;90;77;145
+.heic 38;2;90;77;145
+.tif 38;2;90;77;145
+.tiff 38;2;90;77;145
+.svg 38;2;90;77;145
+.svgz 38;2;90;77;145
+.ico 38;2;90;77;145
+.xcf 38;2;90;77;145
+.psd 38;2;90;77;145
+.ai 38;2;90;77;145
+.eps 38;2;90;77;145
+.pbm 38;2;90;77;145
+.pgm 38;2;90;77;145
+.ppm 38;2;90;77;145
+.tga 38;2;90;77;145
+.xbm 38;2;90;77;145
+.xpm 38;2;90;77;145
+.pcx 38;2;90;77;145
+.raw 38;2;90;77;145
+.cr2 38;2;90;77;145
+.nef 38;2;90;77;145
+.dng 38;2;90;77;145
+
+## Video
+.mp4 01;38;2;90;77;145
+.m4v 01;38;2;90;77;145
+.mkv 01;38;2;90;77;145
+.webm 01;38;2;90;77;145
+.mov 01;38;2;90;77;145
+.avi 01;38;2;90;77;145
+.wmv 01;38;2;90;77;145
+.flv 01;38;2;90;77;145
+.mpg 01;38;2;90;77;145
+.mpeg 01;38;2;90;77;145
+.m2v 01;38;2;90;77;145
+.ogv 01;38;2;90;77;145
+.ogm 01;38;2;90;77;145
+.vob 01;38;2;90;77;145
+.3gp 01;38;2;90;77;145
+
+## Audio
+.mp3 38;2;0;101;118
+.flac 38;2;0;101;118
+.ogg 38;2;0;101;118
+.oga 38;2;0;101;118
+.opus 38;2;0;101;118
+.wav 38;2;0;101;118
+.aac 38;2;0;101;118
+.m4a 38;2;0;101;118
+.wma 38;2;0;101;118
+.aiff 38;2;0;101;118
+.alac 38;2;0;101;118
+.ape 38;2;0;101;118
+.mid 38;2;0;101;118
+.midi 38;2;0;101;118
+.mka 38;2;0;101;118
+.spx 38;2;0;101;118
+
+## Documents
+.pdf 38;2;100;76;49
+.ps 38;2;100;76;49
+.djvu 38;2;100;76;49
+.epub 38;2;100;76;49
+.mobi 38;2;100;76;49
+.doc 38;2;100;76;49
+.docx 38;2;100;76;49
+.odt 38;2;100;76;49
+.rtf 38;2;100;76;49
+.xls 38;2;100;76;49
+.xlsx 38;2;100;76;49
+.ods 38;2;100;76;49
+.ppt 38;2;100;76;49
+.pptx 38;2;100;76;49
+.odp 38;2;100;76;49
+.md 38;2;100;76;49
+.markdown 38;2;100;76;49
+.rst 38;2;100;76;49
+.org 38;2;100;76;49
+.adoc 38;2;100;76;49
+.tex 38;2;100;76;49
+.txt 38;2;100;76;49
+
+## Data and config
+.json 38;2;148;78;32
+.jsonc 38;2;148;78;32
+.json5 38;2;148;78;32
+.ndjson 38;2;148;78;32
+.yaml 38;2;148;78;32
+.yml 38;2;148;78;32
+.toml 38;2;148;78;32
+.ini 38;2;148;78;32
+.cfg 38;2;148;78;32
+.conf 38;2;148;78;32
+.env 38;2;148;78;32
+.xml 38;2;148;78;32
+.csv 38;2;148;78;32
+.tsv 38;2;148;78;32
+.parquet 38;2;148;78;32
+.sqlite 38;2;148;78;32
+.db 38;2;148;78;32
+.sql 38;2;148;78;32
+.lock 38;2;148;78;32
+
+## Important files (suffix globs)
+*Makefile 01;04;38;2;100;76;49
+*makefile 01;04;38;2;100;76;49
+*GNUmakefile 01;04;38;2;100;76;49
+*CMakeLists.txt 01;04;38;2;100;76;49
+*Dockerfile 01;04;38;2;100;76;49
+*Containerfile 01;04;38;2;100;76;49
+*Justfile 01;04;38;2;100;76;49
+*justfile 01;04;38;2;100;76;49
+*README 01;04;38;2;100;76;49
+*README.md 01;04;38;2;100;76;49
+*README.rst 01;04;38;2;100;76;49
+*README.txt 01;04;38;2;100;76;49
+*LICENSE 01;04;38;2;100;76;49
+*LICENSE.md 01;04;38;2;100;76;49
+*COPYING 01;04;38;2;100;76;49
+*CHANGELOG.md 01;04;38;2;100;76;49
+*pyproject.toml 01;04;38;2;100;76;49
+*Cargo.toml 01;04;38;2;100;76;49
+*package.json 01;04;38;2;100;76;49
+*go.mod 01;04;38;2;100;76;49
+
+## Keys and crypto
+.pem 38;2;111;44;121
+.key 38;2;111;44;121
+.crt 38;2;111;44;121
+.cer 38;2;111;44;121
+.csr 38;2;111;44;121
+.p12 38;2;111;44;121
+.pfx 38;2;111;44;121
+.gpg 38;2;111;44;121
+.pgp 38;2;111;44;121
+.asc 38;2;111;44;121
+.sig 38;2;111;44;121
+.pub 38;2;111;44;121
+.kdbx 38;2;111;44;121
+
+## Backup, temporary and generated
+*~ 38;2;208;199;210
+.bak 38;2;208;199;210
+.old 38;2;208;199;210
+.orig 38;2;208;199;210
+.rej 38;2;208;199;210
+.swp 38;2;208;199;210
+.swo 38;2;208;199;210
+.tmp 38;2;208;199;210
+.temp 38;2;208;199;210
+.part 38;2;208;199;210
+.crdownload 38;2;208;199;210
+.log 38;2;208;199;210
+.pid 38;2;208;199;210
+.cache 38;2;208;199;210
+.pyc 38;2;208;199;210
+.pyo 38;2;208;199;210
+.o 38;2;208;199;210
+.obj 38;2;208;199;210
+.a 38;2;208;199;210
+.so 38;2;208;199;210
+.class 38;2;208;199;210
+.elc 38;2;208;199;210
+.aux 38;2;208;199;210
+.toc 38;2;208;199;210
+.out 38;2;208;199;210
+*.DS_Store 38;2;208;199;210
+*Thumbs.db 38;2;208;199;210
