@@ -93,7 +93,7 @@ source $ZSH/oh-my-zsh.sh
 
 tinted-dircolors is released under the [MIT License](LICENSE.txt).
 
-- File-type layout modelled on
+- File-type layout modeled on
   [seebi/dircolors-solarized](https://github.com/seebi/dircolors-solarized),
   Copyright (c) 2020 Sebastian Tramp, MIT License.
 - Based on the GNU coreutils `dircolors` database (`dircolors -p`),
