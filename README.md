@@ -49,7 +49,7 @@ Append to `~/.config/tinted-theming/tinty/config.toml`:
 name = "tinted-dircolors"
 path = "https://github.com/jfishe/tinted-dircolors"
 themes-dir = "dircolors"
-hook = "cp -f %f \"$HOME/.dircolors\" && { [ -z \"$USERPROFILE\" ] || cp -f %f \"$USERPROFILE/.dircolors\"; }"
+hook = "for d in \"$HOME\" ${USERPROFILE:+\"$USERPROFILE\"}; do cp -f %f \"$d/.dircolors\"; done"
 supported-systems = ["base16", "base24", "tinted8"]
 ```
 
