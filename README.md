@@ -23,17 +23,24 @@ Remote tinty template that provides a truecolor `dircolors` file per scheme
 
 ## Development
 
-Edit `src/dircolors.in`, then preview locally:
+Edit `src/dircolors.in`, then build locally:
 
 ```bash
-./gen-templates.sh
-tinty build .
+./build.sh   # tinty sync + gen-templates.sh + tinty build
 ```
 
+`build.sh` builds against the upstream tinted-theming schemes plus the
+`[[schemes.extras]]` in [`tinty.toml`](tinty.toml), such as
+[tinted-colortemplate](https://github.com/jfishe/tinted-colortemplate)'s
+solarized8. It uses that config and its own data dir (`.cache/tinty`), not
+your personal tinty setup. It rebuilds `dircolors/` from scratch, so removed
+schemes disappear. (`tinty build .` alone reads only the upstream schemes.)
+
 Commit and push `src/`, `templates/`, and `dircolors/`. The
-[update workflow](.github/workflows/update.yml) also regenerates the templates and
-rebuilds `dircolors/` on every push touching `src/` and weekly against the latest
-upstream schemes. Users pick up changes with `tinty update`.
+[update workflow](.github/workflows/update.yml) runs the same `build.sh` with the
+same tinty release (pinned there; keep it in step with your local tinty). It
+runs on every push touching the sources or build, and weekly against the latest
+schemes. Users pick up changes with `tinty update`.
 
 The tinty hook copies the applied scheme to `~/.dircolors`,
 which `_tinty_dircolors` in `~/.zshrc` loads.
